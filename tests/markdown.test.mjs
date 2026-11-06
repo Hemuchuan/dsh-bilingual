@@ -82,8 +82,10 @@ test('code fences, tables and block math are never translated', () => {
 test('language detection and target selection', () => {
   assert.equal(md.languageOf('磁通量是标量。'), 'zh')
   assert.equal(md.languageOf('Magnetic flux is a scalar quantity.'), 'en')
+  assert.equal(md.languageOf('功率因数 0.88 滞后（lagging）：'), 'zh')
   assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: '磁通量是标量。' }), { source: 'zh', target: 'en' })
   assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: 'Magnetic flux is a scalar quantity.' }), { source: 'en', target: 'zh' })
+  assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: '功率因数 0.88 滞后（lagging）：' }), { source: 'zh', target: 'en' })
   assert.equal(md.translationTarget({ kind: 'paragraph', content: '12345' }), null)
   assert.equal(md.translationTarget({ kind: 'paragraph', content: 'const x = { a: 1 };' }), null)
   assert.equal(md.translationTarget({ kind: 'paragraph', content: 'https://example.com/a' }), null)

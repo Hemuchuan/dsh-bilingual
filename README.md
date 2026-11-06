@@ -1,6 +1,8 @@
-# dsh-bilingual · 中英双语对照
+# dsh-bilingual · 中英双语对照（DSH 桌面端）
 
-给 DeepSeek Harness Web 聊天加一个「双语」开关：**开启后，助手回复的每一段原文下面自动追加另一种语言**。
+给 **DeepSeek Harness 桌面端（DSH Desktop）** 的聊天界面加一个「双语」开关：**开启后，助手回复的每一段原文下面自动追加另一种语言**。
+
+> **适用平台：** DSH Desktop（Windows / macOS / Linux 的桌面应用）。插件安装到 `profiles/desktop`；同一套 Web GUI 架构下也可用于 `dsh web`，当前主要在桌面端验证。
 
 ![示意图（已脱敏）](docs/preview.png)
 
@@ -97,16 +99,6 @@
 3. 重启 DSH。
 
 可选：删除 `~/.dsh/dsh-bilingual.json`（会一并删掉保存的 Key）。
-
-## 参考与归属
-
-本插件为独立编写，不是对某个现成插件的封装。实现时参考了生态里已有的做法：
-
-- DSH 官方 `dsh-client-ui-chat` 的 `assistant-step` 数据形状、`MarkdownText` / `JsonBlock` 用法；
-- 社区 MIT 插件 `@lynn123411/dsh-chat-translate`、`dsh-auto-translate` 的「影子注册 `assistant-step`」思路，以及少量 Markdown labels / pathImages 兼容小件；
-- `dsh-agent-md`、`dsh-codex-effort-slider` 的客户端 bundle、设置页与头部插槽写法。
-
-**双向逐段插入、语言判断与拼装、DeepSeek 代理、配置/缓存、开关与设置页**为独立实现。代码以 MIT 发布。
 
 ## License
 

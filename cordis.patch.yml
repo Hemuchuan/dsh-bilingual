@@ -1,0 +1,6 @@
+# dsh-bilingual bundle patch：把本插件作为一行插进 profile 的条目列表。
+# name 必须是裸包名；dsh-web 的客户端模块扫描只解析裸包名行，
+# 靠这一行找到 package.json、读到 dsh.client，从而加载 lib/client.js。
+- insert:
+    - id: dsh-bilingual
+      name: dsh-bilingual

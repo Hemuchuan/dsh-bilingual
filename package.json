@@ -1,0 +1,46 @@
+{
+  "name": "dsh-bilingual",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DSH Web 中英双语对照：开启后，助手回复的每一段原文下方自动追加另一种语言（中文→英文 / 英文→中文）。Bilingual paragraph-by-paragraph display for the DeepSeek Harness Web GUI.",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "bilingual",
+    "translation",
+    "i18n"
+  ],
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.1 <0.3.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  },
+  "license": "MIT"
+}

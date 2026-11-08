@@ -1,6 +1,6 @@
-# dsh-bilingual · 中英双语对照（DSH 桌面端）
+# dsh-bilingual · 中英逐段翻译 / 双语对照（DSH 桌面端）
 
-给 **DeepSeek Harness 桌面端（DSH Desktop）** 的聊天界面加一个「双语」开关：**开启后，助手回复的每一段原文下面自动追加另一种语言**。
+给 **DeepSeek Harness 桌面端（DSH Desktop）** 的聊天界面加一个「双语」开关：**开启后，助手回复的每一段原文下面自动追加另一种语言**（逐段翻译 / 中英对照）。
 
 > **适用平台：** DSH Desktop（Windows / macOS / Linux 的桌面应用）。插件安装到 `profiles/desktop`；同一套 Web GUI 架构下也可用于 `dsh web`，当前主要在桌面端验证。
 

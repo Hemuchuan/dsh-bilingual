@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "DSH 桌面端中英双语对照：开启后，助手回复的每一段原文下方自动追加另一种语言（中文→英文 / 英文→中文）。Bilingual paragraph-by-paragraph display for the DeepSeek Harness desktop app.",
+  "description": "DSH 桌面端中英逐段翻译 / 双语对照：开启后，助手回复的每一段原文下方自动追加另一种语言（中文→英文 / 英文→中文）。Paragraph-by-paragraph translation and bilingual display for the DeepSeek Harness desktop app.",
   "keywords": [
     "deepseek-harness",
     "dsh",
     "dsh-plugin",
     "bilingual",
     "translation",
-    "i18n"
+    "translate",
+    "i18n",
+    "翻译",
+    "双语",
+    "中英对照"
   ],
   "main": "lib/index.js",
   "exports": {
@@ -25,7 +29,7 @@
   ],
   "engines": {
     "node": ">=20",
-    "dsh": ">=0.2.0-rc.1 <0.3.0"
+    "dsh": ">=0.2.1-rc.1 <0.3.0-0"
   },
   "peerDependencies": {
     "react": "^18.2.0"

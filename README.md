@@ -30,7 +30,7 @@
 
 ### 从 npm 安装（推荐）
 
-已发布为 npm 包 `dsh-bilingual@0.1.3`：
+已发布为 npm 包 `dsh-bilingual@0.1.4`：
 
 ```powershell
 dsh plugin --profile desktop add dsh-bilingual

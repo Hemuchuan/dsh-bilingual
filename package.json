@@ -1,8 +1,8 @@
-{
+﻿{
   "name": "dsh-bilingual",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
-  "description": "DSH 桌面端中英逐段翻译 / 双语对照：开启后，助手回复的每一段原文下方自动追加另一种语言（中文→英文 / 英文→中文）。Paragraph-by-paragraph translation and bilingual display for the DeepSeek Harness desktop app.",
+  "description": "DSH æ¡Œé¢ç«¯ä¸­è‹±é€æ®µç¿»è¯‘ / åŒè¯­å¯¹ç…§ï¼šå¼€å¯åŽï¼ŒåŠ©æ‰‹å›žå¤çš„æ¯ä¸€æ®µåŽŸæ–‡ä¸‹æ–¹è‡ªåŠ¨è¿½åŠ å¦ä¸€ç§è¯­è¨€ï¼ˆä¸­æ–‡â†’è‹±æ–‡ / è‹±æ–‡â†’ä¸­æ–‡ï¼‰ã€‚Paragraph-by-paragraph translation and bilingual display for the DeepSeek Harness desktop app.",
   "keywords": [
     "deepseek-harness",
     "dsh",
@@ -11,9 +11,9 @@
     "translation",
     "translate",
     "i18n",
-    "翻译",
-    "双语",
-    "中英对照"
+    "ç¿»è¯‘",
+    "åŒè¯­",
+    "ä¸­è‹±å¯¹ç…§"
   ],
   "main": "lib/index.js",
   "exports": {
@@ -60,3 +60,4 @@
   },
   "license": "MIT"
 }
+

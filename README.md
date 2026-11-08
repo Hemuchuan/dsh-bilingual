@@ -28,7 +28,19 @@
 
 ## 安装
 
-本插件按「本地 link」方式装进桌面 profile：
+### 从 npm 安装（推荐）
+
+已发布为 npm 包 `dsh-bilingual@0.1.0`：
+
+```powershell
+dsh plugin --profile desktop add dsh-bilingual
+```
+
+也可以在 DSH 的插件市场里搜索 `dsh-bilingual` 或 `逐段翻译`。
+
+### 本地 link（开发）
+
+本插件也可以按「本地 link」方式装进桌面 profile：
 
 ```powershell
 # 1. 退出 DSH（或装完后再重启）

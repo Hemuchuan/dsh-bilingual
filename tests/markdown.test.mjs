@@ -58,7 +58,7 @@ test('nested list item is translated separately and does not duplicate the paren
   assert.match(out, /  - 子项\n\n    Child/)
 })
 
-test('code fences, tables and block math are never translated', () => {
+test('code fences and block math are skipped, tables become translatable units', () => {
   const source = [
     '```js',
     'const a = 1',
@@ -75,8 +75,13 @@ test('code fences, tables and block math are never translated', () => {
     '正文。',
   ].join('\n')
   const units = md.splitUnits(source)
-  assert.deepEqual(units.map((u) => u.kind), ['paragraph'])
-  assert.equal(units[0].content, '正文。')
+  assert.deepEqual(units.map((u) => u.kind), ['table', 'paragraph'])
+  const table = units[0].content
+  assert.match(table, /\| 名称 \| 值 \|/)
+  const translatedTable = '| Name | Value |\n| --- | --- |\n| a | 1 |'
+  const out = md.decorate(source, translationsFor(source, { [table]: translatedTable, '正文。': 'Body.' }))
+  assert.match(out, /\| 名称 \| 值 \|\n\| --- \| --- \|\n\| a \| 1 \|\n\n\| Name \| Value \|/)
+  assert.match(out, /```js\nconst a = 1\n```/)
 })
 
 test('language detection and target selection', () => {
@@ -86,6 +91,7 @@ test('language detection and target selection', () => {
   assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: '磁通量是标量。' }), { source: 'zh', target: 'en' })
   assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: 'Magnetic flux is a scalar quantity.' }), { source: 'en', target: 'zh' })
   assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: '功率因数 0.88 滞后（lagging）：' }), { source: 'zh', target: 'en' })
+  assert.deepEqual(md.translationTarget({ kind: 'table', content: '| 名称 | 值 |\n| --- | --- |\n| a | 1 |' }), { source: 'zh', target: 'en' })
   assert.equal(md.translationTarget({ kind: 'paragraph', content: '12345' }), null)
   assert.equal(md.translationTarget({ kind: 'paragraph', content: 'const x = { a: 1 };' }), null)
   assert.equal(md.translationTarget({ kind: 'paragraph', content: 'https://example.com/a' }), null)

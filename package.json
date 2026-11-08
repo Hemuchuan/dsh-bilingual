@@ -1,7 +1,6 @@
 {
   "name": "dsh-bilingual",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "DSH 桌面端中英逐段翻译 / 双语对照：开启后，助手回复的每一段原文下方自动追加另一种语言（中文→英文 / 英文→中文）。Paragraph-by-paragraph translation and bilingual display for the DeepSeek Harness desktop app.",
   "keywords": [
@@ -24,6 +23,7 @@
   },
   "files": [
     "lib",
+    "docs",
     "cordis.patch.yml",
     "README.md"
   ],
@@ -45,6 +45,18 @@
         "@deepseek-ai/dsh-client-ui-primitives"
       ]
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hemuchuan/dsh-bilingual.git"
+  },
+  "homepage": "https://github.com/Hemuchuan/dsh-bilingual#readme",
+  "bugs": {
+    "url": "https://github.com/Hemuchuan/dsh-bilingual/issues"
+  },
+  "author": "Hemuchuan",
+  "publishConfig": {
+    "access": "public"
   },
   "license": "MIT"
 }

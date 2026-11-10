@@ -88,6 +88,8 @@ test('language detection and target selection', () => {
   assert.equal(md.languageOf('磁通量是标量。'), 'zh')
   assert.equal(md.languageOf('Magnetic flux is a scalar quantity.'), 'en')
   assert.equal(md.languageOf('功率因数 0.88 滞后（lagging）：'), 'zh')
+  assert.equal(md.languageOf('由 (ii)：'), 'zh')
+  assert.equal(md.languageOf('(a) Fringing（3 分）'), 'zh')
   assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: '磁通量是标量。' }), { source: 'zh', target: 'en' })
   assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: 'Magnetic flux is a scalar quantity.' }), { source: 'en', target: 'zh' })
   assert.deepEqual(md.translationTarget({ kind: 'paragraph', content: '功率因数 0.88 滞后（lagging）：' }), { source: 'zh', target: 'en' })
